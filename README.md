@@ -91,7 +91,13 @@ struct ContentView: View {
         HSplitView {
             A()
             B()
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            maxHeight: .infinity
+        )
+        .background(Color.blue)
     }
 }
 
