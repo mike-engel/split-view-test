@@ -7,10 +7,65 @@
 
 import SwiftUI
 
+struct A: View {
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            HStack {
+                Spacer()
+                
+                Text("Pane A")
+                
+                Spacer()
+            }
+            
+            Spacer()
+        }
+        .frame(
+            minWidth: 200,
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .leading
+        )
+        .background(Color.red)
+        .foregroundColor(.black)
+        .layoutPriority(1)
+    }
+}
+
+struct B: View {
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            HStack {
+                Spacer()
+                
+                Text("Pane B")
+                
+                Spacer()
+            }
+            
+            Spacer()
+        }
+        .frame(
+            minWidth: 200,
+            idealWidth: 250,
+            maxWidth: 300,
+            maxHeight: .infinity
+        )
+        .background(Color.purple)
+        .foregroundColor(.black)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HSplitView {
+            A()
+            B()
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
