@@ -11,7 +11,8 @@ import SwiftUI
 struct split_view_testApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().edgesIgnoringSafeArea(.top)
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
     }
 }
